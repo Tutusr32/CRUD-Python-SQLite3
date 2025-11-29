@@ -1,80 +1,86 @@
-Sistema de Estudos — SQLite + Python
+📚 Sistema de Estudos — SQLite + Python
 
-CRUD completo para aprendizagem de banco de dados
+CRUD completo para estudos de banco de dados
 
-Este repositório reúne meus estudos práticos com SQLite utilizando Python, cobrindo operações de SELECT, INSERT, UPDATE e DELETE.
-Os exemplos seguem boas práticas, incluindo comandos parametrizados, tratamento de erros e verificação de impacto das operações.
+Este repositório contém meus experimentos práticos com SQLite usando Python, incluindo operações de SELECT, INSERT, UPDATE e DELETE, todos seguindo boas práticas como comandos parametrizados, tratamento de erros e controle de impacto (rowcount).
 
-O objetivo é consolidar fundamentos de CRUD e criar base sólida para evoluir futuramente para MySQL.
+O objetivo é consolidar fundamentos reais de CRUD e preparar terreno para integrações futuras com MySQL.
 
-Tecnologias Utilizadas
+🚀 Tecnologias Utilizadas
 
 Python 3
 
-SQLite3 (módulo nativo)
+SQLite3 (nativo do Python)
 
-Funcionalidades Implementadas
-SELECT com filtros
+📌 Funcionalidades Implementadas
+✔️ SELECT com filtros
 
-Consultas com parâmetros
+Busca com parâmetros
 
 Uso correto de fetchall()
 
-Impressão formatada dos resultados
+Retorno formatado
 
-UPDATE com segurança
+✔️ UPDATE seguro
 
-Atualização usando placeholders
+Parâmetros com ?
 
 Verificação de linhas afetadas
 
-Tratamento de erro básico
+Tratamento de erro
 
-DELETE com controle de impacto
+✔️ DELETE com controle de impacto
 
-Exclusão parametrizada
+Deleção parametrizada
 
-Feedback caso nenhum registro seja removido
+Aviso quando nenhum registro for removido
 
-Exemplos de Código
-SELECT com parâmetros
+🧠 Exemplos de Código
+🔍 SELECT com parâmetros
 cursor.execute(
     "SELECT * FROM Alunos WHERE curso = ? AND idade > ?",
     ('EET', 30)
 )
 alunos = cursor.fetchall()
 
-UPDATE
+✏️ UPDATE seguro
 cursor.execute(
     "UPDATE Alunos SET idade = ? WHERE nome = ?",
     (43, "Fernando de Noronha")
 )
 
-DELETE
+❌ DELETE com tupla correta
 cursor.execute(
     "DELETE FROM Alunos WHERE nome = ?",
     ("Roberto Silva",)
 )
 
-Boas Práticas Aplicadas
+⚠️ Boas Práticas Aplicadas
 
 Uso de placeholders para evitar SQL injection
 
-Parâmetros sempre em tupla
+Tuplas corretas para parâmetros
 
-Tratamento simples de exceções
+Tratamento de exceções com try/except
 
-Acompanhamento do impacto das operações via rowcount
+rowcount para saber se a operação teve impacto
 
-Commit e fechamento garantidos
+commit() e close() sempre garantidos
 
-Estrutura do Repositório
-/projeto_sqlite
+📂 Estrutura do Repositório
+/meu_projeto_sqlite
+│── create.py
 │── select.py
 │── update.py
 │── delete.py
 └── Banco_escolar.db
 
-Objetivo do Projeto
+🎯 Objetivo do Projeto
 
-Criar entendimento sólido sobre manipulação de bancos de dados usando Python, preparar terreno para bancos relacionais mais robustos (como MySQL) e construir código consistente, direto e organizado.
+Criar uma base sólida no CRUD com SQLite, com foco em:
+
+dominar a integração Python ↔ Banco
+
+evoluir para MySQL e sistemas maiores
+
+construir código limpo, seguro e profissional
